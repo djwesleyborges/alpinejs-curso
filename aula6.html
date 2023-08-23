@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div x-data="{
+        error:false
+    }">
+        <span x-bind:class="{'red':error}" class="bold">teste</span>
+        <button type="button" x-on:click="error=!error">Alterar</button>
+    </div>
+
+    <div x-data="{
+        imagem:'https://via.placeholder.com/150',
+        texto_input:'Endereço da imagem'
+    }">
+        <img x-bind:src="imagem" alt="">
+        <input type="text" x-model="imagem" x-bind:placeholder="texto_input">
+        <button type="button" x-on:click="imagem='https://via.placeholder.com/350'">Alterar Imagem</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Aula 10</title>
+</head>
+
+<body>
+    <section x-data="{
+        open:false,
+    }">
+        <button type="button" x-on:click="open=!open" class="btn">Abre/Fecha</button>
+        <p x-show="open">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <template x-if="open">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </template>
+    </section>
+</body>
+
+</html>
